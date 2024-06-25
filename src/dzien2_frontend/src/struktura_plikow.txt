@@ -1,0 +1,20 @@
+my_project/
+├── src/
+│   ├── my_canister/
+│   │   ├── Cargo.toml          # Plik konfiguracyjny projektu Rust, definiuje zależności i opcje kompilacji
+│   │   ├── src/
+│   │   │   └── lib.rs          # Główny plik źródłowy Rust, zawiera logikę kanistra
+│   └── my_project_assets/
+│       ├── src/
+│       │   ├── assets/         # Katalog na statyczne zasoby (obrazy, style CSS itp.)
+│       │   ├── components/     # Katalog na komponenty Vue.js
+│       │   ├── App.vue         # Główny komponent aplikacji Vue.js
+│       │   ├── main.js         # Główny plik JavaScript do inicjalizacji aplikacji Vue.js
+│       │   └── router.js       # Plik konfiguracji routingu Vue.js (opcjonalny)
+│       ├── package.json        # Plik konfiguracyjny npm, definiuje zależności i skrypty dla projektu Vue.js
+│       ├── tsconfig.json       # Plik konfiguracyjny TypeScript (opcjonalny, jeśli używasz TypeScript)
+│       └── webpack.config.js   # Plik konfiguracyjny Webpack dla projektu Vue.js
+├── dfx.json                    # Główny plik konfiguracyjny projektu Dfinity, zawiera informacje o kanistrach i ustawieniach wdrożenia
+├── webpack.config.js           # Główny plik konfiguracyjny Webpack dla całego projektu
+├── tsconfig.json               # Główny plik konfiguracyjny TypeScript dla całego projektu (jeśli używasz TypeScript)
+└── README.md                   # Plik z dokumentacją projektu

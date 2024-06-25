@@ -1,9 +1,9 @@
-<template>
+<template> <!-- templatka komponentu vue -->
     <div>
-        <button @click="pobierzWpisy">odswiez</button>
-        elo 
-        {{ wpisy }}
-        <input v-model="nowyBlog" type="text">
+        <button @click="pobierzWpisy">odswiez</button>  <!-- przycisk uruchomiający metode pobierzWpis() -->
+        elo <!-- losowy napis -->
+        {{ wpisy }} <!-- wypisywanie wpisów -->
+        <input v-model="nowyBlog" type="text">  <!-- wiazanie dwukierunkowe z danymi (nowyBlog) i wprowadzenie tekstu -->
         <button @click="dodajWpis">dodaj</button>
     </div>
 </template>

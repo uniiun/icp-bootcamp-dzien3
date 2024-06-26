@@ -1,5 +1,6 @@
 <template>                                                  <!-- templatka komponentu vue -->
     <div>
+        <h2 class="text-blue-600">Wpisy na bloga</h2>
         <button @click="pobierzWpisy">odswiez</button>      <!-- przycisk uruchomiający metode pobierzWpis() -->
         elo                                                 <!-- losowy napis -->
         {{ wpisy }}                                         <!-- wypisywanie wpisów -->
@@ -24,6 +25,9 @@ import { dzien2_backend } from 'declarations/dzien2_backend/index';
             async dodajWpis(){
                await dzien2_backend.dodaj_wpis(this.nowyBlog);
             }
+        },
+        async mounted() {
+            this.pobierzWpisy()
         },
     }
 </script>

@@ -1,12 +1,12 @@
 <!-- główny plik aplikacji vue -->
 <!-- część skryptowa -->
-<script setup>  // jest automatycznie wykonywany w kontekście setup() metody komponentu, co oznacza, że nie musisz jawnie deklarować setup().
-import { ref } from 'vue';                            // Importuje funkcję ref z biblioteki Vue. ref służy do tworzenia reaktywnych zmiennych,
-                                                      // które mogą być używane do śledzenia i reagowania na zmiany danych w komponentach Vue.
+<script setup>                                             // jest automatycznie wykonywany w kontekście setup() metody komponentu, co oznacza, że nie musisz jawnie deklarować setup().
+import { ref } from 'vue';                                 // Importuje funkcję ref z biblioteki Vue. ref służy do tworzenia reaktywnych zmiennych,
+                                                           // które mogą być używane do śledzenia i reagowania na zmiany danych w komponentach Vue.
 import { dzien2_backend } from 'declarations/dzien2_backend/index'; // importuje backend aplikacji
-import Blog from './components/Blog.vue';             //imprort componentu bloga
+import Blog from './components/Blog.vue';                  //imprort componentu bloga
 
-let greeting = ref('');                                   //tworzy reaktywną zmienną greeting, która początkowo przechowuje pusty ciąg znaków
+let greeting = ref('');                                    //tworzy reaktywną zmienną greeting, która początkowo przechowuje pusty ciąg znaków
 
 async function handleSubmit(e) {
   e.preventDefault();                                      // Zapobiega domyślnemu zachowaniu formularza (odświeżenie strony)
@@ -19,13 +19,14 @@ async function handleSubmit(e) {
   });
 }
 </script>
+
 <!-- templataka strony głównej -->
 <template>
   <main>
     <img src="/logo2.svg" alt="DFINITY logo" /> 
     <br />
     <br />
-    
+    <h1 class="text-blue-600">whoami</h1>
     <form action="#" @submit="handleSubmit">  <!-- "@" skraca eventy z js  -->
       <label for="name">Enter your name: &nbsp;</label>
       <input id="name" alt="Name" type="text" />

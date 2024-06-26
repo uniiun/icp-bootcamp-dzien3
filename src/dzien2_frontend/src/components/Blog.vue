@@ -11,15 +11,15 @@
 <script>
 import { dzien2_backend } from 'declarations/dzien2_backend/index';
     export default {
-        data() {
+        data() {                //dane do których bedziemy sie odnosic
             return {
-                wpisy:[],
-                nowyBlog: "" , 
+                wpisy:[],       //wektor/tablica wpisów
+                nowyBlog: "" ,  //wpis
             }
         },
-        methods: {
+        methods: {              //metody do wykonywania operacji
             async pobierzWpisy(){
-                this.wpisy = await dzien2_backend.oczytaj_wpisy();
+                this.wpisy = await dzien2_backend.oczytaj_wpisy();  //await jest po to żeby blockchain nie czekał na odpowiedz (asycnroniczne)
             },
             async dodajWpis(){
                await dzien2_backend.dodaj_wpis(this.nowyBlog);

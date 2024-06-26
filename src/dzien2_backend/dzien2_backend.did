@@ -1,5 +1,5 @@
 service : {
-    "greet": (text, int8) -> (text) query;
-    "dodaj_wpis": (text) -> ();
-    "oczytaj_wpisy": () -> (vec text) query;
+    "greet": (text, int8) -> (text) query;  //interfejs greet z lib.rs przyjuje tekst i 8bit int i zwraca tekst
+    "dodaj_wpis": (text) -> ();             //interfejs dodawania wpisu przyjmuje tekst i nic niezwraca
+    "oczytaj_wpisy": () -> (vec text) query;//interfejs odczytywania wpisów, nie przyjmuje zadnych argumentów i zwraca vector tekstów
 }

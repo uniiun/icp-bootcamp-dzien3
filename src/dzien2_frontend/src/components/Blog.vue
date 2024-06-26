@@ -1,11 +1,20 @@
 <template>                                                  <!-- templatka komponentu vue -->
     <div>
         <h2 class="text-blue-600">Wpisy na bloga</h2>
-        <button @click="pobierzWpisy">odswiez</button>      <!-- przycisk uruchomiający metode pobierzWpis() -->
-        elo                                                 <!-- losowy napis -->
-        {{ wpisy }}                                         <!-- wypisywanie wpisów -->
-        <input v-model="nowyBlog" type="text">              <!-- wiazanie dwukierunkowe z danymi (nowyBlog) i wprowadzenie tekstu -->
-        <button @click="dodajWpis">dodaj</button>
+        <div class="w-100 flex flex-row-reverse">
+            <button @click="pobierzWpisy" class="bg-blue-600 rounded text-white p-4">odswiez</button>      <!-- przycisk uruchomiający metode pobierzWpis() -->
+        </div>
+        elo         <!-- losowy napis -->
+        <div class="grid mx-6 gap-4 my-4">                                        
+            <div v-for="(wpis, index) in wpisy" class="drop-shadow-xl bg-stone-400 p-4">
+                <p>id: {{ index }}</p>
+                <p>{{ wpis }}</p>
+            </div>
+        </div>
+        <div class="flex justify-content-center flex-col">
+            <input v-model="nowyBlog" type="text" class="border-3 border-blue-600 p-4 drop-shadow-md" >              <!-- wiazanie dwukierunkowe z danymi (nowyBlog) i wprowadzenie tekstu -->
+            <button @click="dodajWpis" class="bg-green-600 rounded text-white p-4">dodaj</button>
+        </div>
     </div>
 </template>
 

@@ -7,7 +7,7 @@ import Blog from './components/Blog.vue';                  //imprort componentu 
 
 <!-- templataka strony głównej -->
 <template>
-  <main>
+  <main class="container mx-auto">
     <img src="/logo2.svg" alt="DFINITY logo" /> 
     <br />
     <br />

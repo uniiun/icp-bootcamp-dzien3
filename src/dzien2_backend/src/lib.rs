@@ -1,4 +1,4 @@
-use std::cell::RefCell;      //RefCell pozwala na mutowalne przechowywanie danych wewnątrz struktury,   
+use std::cell::{RefCell, RefMut};      //RefCell pozwala na mutowalne przechowywanie danych wewnątrz struktury,   
                             //która jest sama niezmienna
 
 thread_local! {         // Makro thread_local! definiuje zmienne, które są specyficzne dla każdego wątku. Oznacza to, że każdy wątek ma własną, odrębną kopię tej        
@@ -21,4 +21,19 @@ fn oczytaj_wpisy()->Vec<String>{                //funkcja wypisująca vector, cz
     WPISY.with(|wpisy|{ // sytuacja analogincza jak przy dodawaniu
         wpisy.borrow().clone()              //ale teraz pobieramy wartość niemutowalną i ją klonujemy do wektora
     })
+}
+#[ic_cdk::update]                                   //zapytanie do kanistra przez icp
+fn usun_wpis(id_wpisu: usize){                     //usize to największa liczba orzez  system (32-bit u32,64-bit u64)
+    WPISY.with(|wpisy| {     
+        wpisy.borrow_mut().remove(id_wpisu)
+    });
+}
+#[ic_cdk::update]                                               //zapytanie do kanistra przez icp
+fn edytuj_wpis(id_wpisu: usize, nowy_wpis: String){                     //usize to największa liczba orzez  system (32-bit u32,64-bit u64)
+    WPISY.with(|wpisy| {     
+        let mut binding = wpisy.borrow_mut();
+        let wpis= binding.get_mut(id_wpisu);
+        let stary_wpis=wpis.unwrap();
+        *stary_wpis = nowy_wpis;
+    });
 }

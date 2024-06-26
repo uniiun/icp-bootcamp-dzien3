@@ -13,9 +13,9 @@ async function handleSubmit(e) {
   const target = e.target;                                 // Pobiera element, który wywołał zdarzenie (formularz)
   const name = target.querySelector('#name').value;        // Pobiera wartość z pola tekstowego o id 'name'
   const numer = target.querySelector('#numer').value;      // Pobiera wartość z pola tekstowego o id 'numer'
-  await dzien2_backend.greet(name, Number(numer)).then((response) => {  // Wywołuje asynchronicznie funkcję 'greet' z backendu 
+  await dzien2_backend.greet(name, Number(numer)).then((response) => {    // Wywołuje asynchronicznie funkcję 'greet' z backendu 
   //                                                                      z dwoma argumentami: name i numer (skonwertowany na liczbę)
-    greeting.value = response;                      // Ustawia wartość reaktywnej zmiennej 'greeting' na odpowiedź z backendu
+    greeting.value = response;                              // Ustawia wartość reaktywnej zmiennej 'greeting' na odpowiedź z backendu
   });
 }
 </script>
